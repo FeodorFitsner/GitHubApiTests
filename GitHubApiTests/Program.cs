@@ -72,7 +72,13 @@ namespace GitHubApiTests
                         prerelease = preRelease,
                         body = body
                     });
-                    response.EnsureSuccessStatusCode();
+
+                    if(!response.IsSuccessStatusCode)
+                    {
+                        var responseBody = await response.Content.ReadAsStringAsync();
+                        Console.WriteLine("ERROR: " + responseBody);
+                    }
+                    //response.EnsureSuccessStatusCode();
                     release = await response.Content.ReadAsAsync<JToken>();
                 }
 
