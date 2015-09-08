@@ -57,6 +57,10 @@ namespace GitHubApiTests
                 // replace \n with real LF
                 body = body.Replace("\\n", "\n");
             }
+            else
+            {
+                body = "";
+            }
 
             // create new release
             if (release == null)
