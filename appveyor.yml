@@ -2,4 +2,4 @@ before_build:
 - nuget restore
 
 deploy_script:
-- bin\Debug\GitHubApiTests.exe
+- GitHubApiTests\bin\Debug\GitHubApiTests.exe
