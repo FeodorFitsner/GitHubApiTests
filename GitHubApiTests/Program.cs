@@ -25,10 +25,10 @@ namespace GitHubApiTests
                 false,
                 false,
                 null
-                );
+                ).Wait();
         }
 
-        private static async void CreateRelease(string repositoryName, string tagName, string releaseName, string commitId, bool draftRelease, bool preRelease, string description)
+        private static async Task CreateRelease(string repositoryName, string tagName, string releaseName, string commitId, bool draftRelease, bool preRelease, string description)
         {
             tagName = tagName.Replace(" ", "-");
 
